@@ -1,25 +1,30 @@
 Question 1: How do you specify a TCP socket in Python?
+
 By using the following line:
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 it creates a TCP socket and socket.SOCK_STREAM specifies TCP. 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 2: What is the difference between a client socket and a server socket in Python?
+
 The main difference between a client socket and a server socket in Python is that a server socket listens for incoming connections and a client socket initiates connections to a server.
 A server socket has to bind to a specific IP address and port, and it is used to accept incoming connections from clients. 
 A client socket is used to initiate connections to a server and to send data to it.
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 3: How do we instruct the OS to let us reuse the same bind port?
+
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 This will allow the server to bind to the same port.
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 4: What information do we get about incoming connections?
+
 After client connects to the server socket, the accept() method returns a new socket object representing the connection, 
 and the address of the client. The address is a tuple containing the IP address and port number of the client. (host, port)
 This information can be used to identify and authenticate the client, and to establish a connection with the client.
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 5: What is returned by recv() from the server after it is done sending the HTTP request?
+
 When a server receives an HTTP request, recv() method reads the request and returns the data as bytes. (the length of the message depends on 'buffer_size')
 The returned data typically includes the headers and the body of the HTTP request. 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 6: Provide a link to your code on GitHub.
 https://github.com/xuclaire0234/404lab2
